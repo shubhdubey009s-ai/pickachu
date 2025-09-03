@@ -47,11 +47,12 @@ const AthletePage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen text-white">
       {/* About Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            
             {/* Profile Image */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -80,7 +81,6 @@ const AthletePage = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="space-y-8"
             >
-              {/* Heading */}
               <div className="mb-8">
                 <h2 className="text-4xl md:text-5xl font-bold mb-6">
                   <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
@@ -140,7 +140,7 @@ const AthletePage = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
+      <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
