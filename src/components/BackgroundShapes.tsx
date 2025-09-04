@@ -6,11 +6,12 @@ const BackgroundShapes = () => {
       {/* Base black + gold gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-yellow-900"></div>
 
-      {/* Moving golden light effect */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,215,0,0.15),transparent_70%)] animate-pulse"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,200,0,0.1),transparent_70%)] animate-pulse"></div>
+      {/* Animated golden spotlight */}
+      <div className="absolute inset-0">
+        <div className="absolute w-[150%] h-[150%] bg-[radial-gradient(circle,rgba(255,215,0,0.25),transparent_70%)] animate-spotlight"></div>
+      </div>
 
-      {/* Subtle noise overlay for texture */}
+      {/* Subtle noise overlay */}
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')] opacity-20 mix-blend-overlay"></div>
     </div>
   );
