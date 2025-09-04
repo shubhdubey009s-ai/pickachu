@@ -8,51 +8,51 @@ const Programs = () => {
       icon: Target,
       title: "Weight Loss Program",
       features: ["Custom meal plans", "Cardio workouts", "Progress tracking", "24/7 support"],
-      color: "from-yellow-400/15 via-yellow-500/10 to-amber-500/10"
+      color: "from-yellow-400/20 via-yellow-500/10 to-amber-500/10"
     },
     {
       icon: Zap,
       title: "Strength Training",
       features: ["Progressive overload", "Form correction", "Muscle building", "Recovery plans"],
-      color: "from-orange-400/15 via-orange-500/10 to-red-500/10"
+      color: "from-orange-400/20 via-orange-500/10 to-red-500/10"
     },
     {
       icon: Heart,
       title: "Wellness & Nutrition",
       features: ["Lifestyle coaching", "Stress management", "Habit formation", "Mindful eating"],
-      color: "from-yellow-300/15 via-yellow-400/10 to-yellow-500/10"
+      color: "from-yellow-300/20 via-yellow-400/10 to-yellow-500/10"
     },
     {
       icon: Trophy,
       title: "Competition Prep",
       features: ["Contest prep", "Peak week planning", "Posing practice", "Stage ready"],
-      color: "from-yellow-500/15 via-amber-500/10 to-orange-400/10"
+      color: "from-yellow-500/20 via-amber-500/10 to-orange-400/10"
     }
   ];
 
-  // Staggered, step-by-step entrance
+  // Slower, smoother stagger
   const container = {
     hidden: { opacity: 1 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15 }
+      transition: { staggerChildren: 0.25 } // more delay between items
     }
   };
 
   const item = {
-    hidden: { opacity: 0, y: 24, filter: "blur(4px)" },
+    hidden: { opacity: 0, y: 40, filter: "blur(6px)" },
     visible: {
       opacity: 1,
       y: 0,
       filter: "blur(0px)",
-      transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] }
+      transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } // slower + smoother
     }
   };
 
   return (
     <section id="programs" className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Heading (unchanged content) */}
+        {/* Heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
@@ -67,7 +67,7 @@ const Programs = () => {
           </p>
         </div>
 
-        {/* Cards – mobile: 1 column like your screenshot; md: 2; lg: 4 */}
+        {/* Cards */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -81,12 +81,12 @@ const Programs = () => {
               variants={item}
               className={`
                 relative overflow-hidden rounded-3xl p-5 md:p-6
-                bg-gradient-to-br from-[#121212] via-[#151515] to-black
-                border border-white/10 shadow-xl
+                bg-white/10 backdrop-blur-md
+                border border-white/15 shadow-xl
                 hover:border-yellow-400/40 hover:shadow-2xl transition
               `}
             >
-              {/* soft background glow */}
+              {/* glow */}
               <div
                 className={`pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full blur-3xl bg-gradient-to-br ${program.color}`}
               />
@@ -104,20 +104,15 @@ const Programs = () => {
                 {program.title}
               </h3>
 
-              {/* Features (same content, tidier layout — no bullets, tighter leading) */}
+              {/* Features */}
               <ul className="list-none space-y-1.5 text-sm md:text-base text-gray-300 leading-relaxed break-words">
                 {program.features.map((feature, idx) => (
-                  <li key={idx} className="text-balance">
-                    {feature}
-                  </li>
+                  <li key={idx} className="text-balance">{feature}</li>
                 ))}
               </ul>
 
-              {/* subtle bottom divider like card foot highlight */}
+              {/* bottom accent */}
               <div className="mt-5 h-px w-full bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent" />
-
-              {/* hover lift */}
-              <div className="absolute inset-0 rounded-3xl ring-0 hover:ring-1 hover:ring-yellow-400/30 transition" />
             </motion.div>
           ))}
         </motion.div>
