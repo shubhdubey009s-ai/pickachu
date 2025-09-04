@@ -24,7 +24,7 @@ const Header = () => {
             <a href="#programs" className="text-white hover:text-yellow-400 transition-colors duration-300 font-medium">
               Programs
             </a>
-            <a href="#courses" className="text-white hover:text-yellow-400 transition-colors duration-300 font-medium">
+            <a href="#about Coach" className="text-white hover:text-yellow-400 transition-colors duration-300 font-medium">
               About coach
             </a>
             <a href="#athlete" className="text-white hover:text-yellow-400 transition-colors duration-300 font-medium">
