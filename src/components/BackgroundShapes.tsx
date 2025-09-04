@@ -1,5 +1,5 @@
 import React from 'react';
-import './background.css'; // <-- we'll put the spotlight animation here
+import './background.css'; // make sure path is correct
 
 const BackgroundShapes = () => {
   return (
@@ -9,7 +9,7 @@ const BackgroundShapes = () => {
 
       {/* Animated golden spotlight */}
       <div className="absolute inset-0">
-        <div className="absolute w-[150%] h-[150%] bg-[radial-gradient(circle,rgba(255,215,0,0.25),transparent_70%)] animate-spotlight"></div>
+        <div className="absolute w-[150%] h-[150%] spotlight-glow animate-spotlight"></div>
       </div>
 
       {/* Subtle noise overlay */}
