@@ -1,4 +1,5 @@
 import React from 'react';
+import './background.css'; // <-- we'll put the spotlight animation here
 
 const BackgroundShapes = () => {
   return (
