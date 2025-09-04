@@ -25,7 +25,7 @@ const Testimonials = () => {
       text: "While I can mention all the positives that I have gained from Adi, there's also a fun complaint: 'Adi you never told me that I will have to change my wardrobe after 6 months with all my shirts and trousers from 6 months ago having to be donated and refilled with slim fits!'"
     },
     {
-      name: "Aditya Sandu",
+      name: "yash maurya",
       title: "Young Athlete",
       image: "/images/testimonials/WhatsApp Image 2025-09-01 at 12.52.36_7d44035d.jpg",
       rating: 5,
