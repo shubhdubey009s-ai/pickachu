@@ -6,28 +6,24 @@ const Programs = () => {
     {
       icon: Target,
       title: "Weight Loss Program",
-      description: "Scientifically designed program to help you lose weight safely and sustainably with personalized nutrition and workout plans.",
       features: ["Custom meal plans", "Cardio workouts", "Progress tracking", "24/7 support"],
       color: "from-yellow-400 to-orange-500"
     },
     {
       icon: Zap,
       title: "Strength Training",
-      description: "Build lean muscle mass and increase your strength with our progressive overload training methodology and expert guidance.",
       features: ["Progressive overload", "Form correction", "Muscle building", "Recovery plans"],
       color: "from-orange-400 to-red-500"
     },
     {
       icon: Heart,
       title: "Wellness & Nutrition",
-      description: "Complete lifestyle transformation focusing on sustainable habits, mental wellness, and nutritional education.",
       features: ["Lifestyle coaching", "Stress management", "Habit formation", "Mindful eating"],
       color: "from-yellow-300 to-yellow-500"
     },
     {
       icon: Trophy,
       title: "Competition Prep",
-      description: "Elite-level training for those looking to compete or achieve peak physical condition with advanced techniques.",
       features: ["Contest prep", "Peak week planning", "Posing practice", "Stage ready"],
       color: "from-yellow-500 to-orange-400"
     }
