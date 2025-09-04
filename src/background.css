@@ -1,22 +1,21 @@
-/* Smooth drifting spotlight */
-@keyframes spotlight {
-  0%   { transform: translate(-30%, -30%) rotate(0deg); }
-  50%  { transform: translate(20%, 20%) rotate(180deg); }
-  100% { transform: translate(-30%, -30%) rotate(360deg); }
+/* Floating effect */
+@keyframes floatSlow {
+  0%   { transform: translate(-10%, -10%) scale(1); }
+  50%  { transform: translate(10%, 10%) scale(1.05); }
+  100% { transform: translate(-10%, -10%) scale(1); }
 }
 
-.animate-spotlight {
-  animation: spotlight 25s ease-in-out infinite;
+@keyframes floatMedium {
+  0%   { transform: translate(5%, -5%) scale(1); }
+  50%  { transform: translate(-5%, 5%) scale(1.05); }
+  100% { transform: translate(5%, -5%) scale(1); }
 }
 
-/* Gradient shimmer animation */
-@keyframes gradientMove {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.animate-float-slow {
+  animation: floatSlow 40s ease-in-out infinite;
 }
 
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradientMove 20s ease infinite;
+.animate-float-medium {
+  animation: floatMedium 60s ease-in-out infinite;
 }
+
