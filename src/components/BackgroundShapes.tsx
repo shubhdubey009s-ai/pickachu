@@ -1,5 +1,5 @@
 import React from 'react';
-import './background.css'; // custom CSS for spotlight + noise
+import '../background.css'; // import the CSS we made
 
 const BackgroundShapes = () => {
   return (
@@ -7,15 +7,20 @@ const BackgroundShapes = () => {
       {/* Base black + gold gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-900 to-yellow-900"></div>
 
-      {/* Moving golden spotlight (smooth animation from CSS) */}
+      {/* Animated golden spotlight */}
       <div className="absolute inset-0">
         <div className="absolute w-[160%] h-[160%] spotlight-glow animate-spotlight"></div>
       </div>
 
-      {/* Subtle noise overlay (inline SVG, no external request) */}
+      {/* Subtle noise overlay (inline SVG for grain effect) */}
       <svg className="absolute opacity-0 pointer-events-none">
         <filter id="grain">
-          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch" />
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.8"
+            numOctaves="4"
+            stitchTiles="stitch"
+          />
           <feColorMatrix type="saturate" values="0" />
         </filter>
       </svg>
