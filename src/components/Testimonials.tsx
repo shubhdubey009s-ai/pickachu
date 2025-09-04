@@ -57,8 +57,10 @@ const Testimonials = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-100 max-w-3xl mx-auto">
-            Discover how our clients have transformed their lives through our personalized fitness programs. 
-            Their incredible journeys inspire us every day.
+            <span className="text-gray-100 font-medium">
+              Discover how our clients have transformed their lives through our personalized fitness programs. 
+              Their incredible journeys inspire us every day.
+            </span>
           </p>
         </div>
 
@@ -66,7 +68,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="group bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20 relative overflow-hidden"
+              className="group bg-white/15 backdrop-blur-md rounded-3xl p-8 border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/30 relative overflow-hidden shadow-lg shadow-black/50"
             >
               {/* Quote icon */}
               <div className="absolute top-6 right-6 opacity-20">
@@ -86,7 +88,7 @@ const Testimonials = () => {
                   <h4 className="text-lg font-bold text-white group-hover:text-yellow-400 transition-colors">
                     {testimonial.name}
                   </h4>
-                  <p className="text-sm text-gray-300">{testimonial.title}</p>
+                  <p className="text-sm text-gray-200 font-medium">{testimonial.title}</p>
                 </div>
               </div>
 
@@ -98,7 +100,7 @@ const Testimonials = () => {
               </div>
 
               {/* Testimonial text */}
-              <p className="text-gray-100 leading-relaxed text-sm mb-6 line-clamp-6">
+              <p className="text-gray-100 leading-relaxed text-base mb-6 line-clamp-6 font-medium">
                 "{testimonial.text}"
               </p>
 
@@ -110,7 +112,7 @@ const Testimonials = () => {
 
         {/* Call to action */}
         <div className="text-center mt-16">
-          <p className="text-gray-100 mb-6 text-lg">Ready to start your own transformation story?</p>
+          <p className="text-gray-100 mb-6 text-lg font-medium">Ready to start your own transformation story?</p>
           <button className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-500/30 hover:scale-105">
             Join Our Success Community
           </button>

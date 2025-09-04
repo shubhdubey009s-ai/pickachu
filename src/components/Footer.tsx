@@ -16,8 +16,10 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md leading-relaxed">
-              Transform your life with our premium fitness programs. Join thousands of success stories 
-              and start your journey to a healthier, stronger you.
+              <span className="text-gray-100 font-medium">
+                Transform your life with our premium fitness programs. Join thousands of success stories 
+                and start your journey to a healthier, stronger you.
+              </span>
             </p>
             <div className="flex space-x-4">
               <a href="#" className="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center text-yellow-400 hover:bg-yellow-500 hover:text-black transition-all duration-300">
@@ -35,26 +37,26 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold text-yellow-400 mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              <li><a href="#programs" className="text-gray-300 hover:text-yellow-400 transition-colors">Programs</a></li>
-              <li><a href="#courses" className="text-gray-300 hover:text-yellow-400 transition-colors">Courses</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-colors">Success Stories</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-yellow-400 transition-colors">FAQ</a></li>
+              <li><a href="#programs" className="text-gray-100 hover:text-yellow-400 transition-colors font-medium">Programs</a></li>
+              <li><a href="#courses" className="text-gray-100 hover:text-yellow-400 transition-colors font-medium">Courses</a></li>
+              <li><a href="#" className="text-gray-100 hover:text-yellow-400 transition-colors font-medium">About Us</a></li>
+              <li><a href="#" className="text-gray-100 hover:text-yellow-400 transition-colors font-medium">Success Stories</a></li>
+              <li><a href="#" className="text-gray-100 hover:text-yellow-400 transition-colors font-medium">FAQ</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-xl font-bold text-yellow-400 mb-6">Contact Info</h3>
             <ul className="space-y-4">
-              <li className="flex items-center text-gray-300">
+              <li className="flex items-center text-gray-100 font-medium">
                 <Mail className="w-5 h-5 text-yellow-400 mr-3" />
                 support@fitgold.com
               </li>
-              <li className="flex items-center text-gray-300">
+              <li className="flex items-center text-gray-100 font-medium">
                 <Phone className="w-5 h-5 text-yellow-400 mr-3" />
                 +91 98765 43210
               </li>
-              <li className="flex items-center text-gray-300">
+              <li className="flex items-center text-gray-100 font-medium">
                 <MapPin className="w-5 h-5 text-yellow-400 mr-3" />
                 Mumbai, India
               </li>
@@ -64,17 +66,17 @@ const Footer = () => {
 
         <div className="border-t border-yellow-500/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 mb-4 md:mb-0">
+            <p className="text-gray-200 mb-4 md:mb-0 font-medium">
               © 2025 FitGold. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">
+              <a href="#" className="text-gray-200 hover:text-yellow-400 transition-colors text-sm font-medium">
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">
+              <a href="#" className="text-gray-200 hover:text-yellow-400 transition-colors text-sm font-medium">
                 Terms of Service
               </a>
-              <a href="#" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">
+              <a href="#" className="text-gray-200 hover:text-yellow-400 transition-colors text-sm font-medium">
                 Cookie Policy
               </a>
             </div>

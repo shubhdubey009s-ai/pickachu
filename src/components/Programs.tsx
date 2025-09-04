@@ -39,8 +39,10 @@ const Programs = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Choose from our expertly crafted programs designed to help you achieve your fitness goals 
-            with proven methodologies and personalized support.
+            <span className="text-gray-100 font-medium">
+              Choose from our expertly crafted programs designed by expert coaches to help you 
+              achieve your specific fitness goals with personalized guidance and support.
+            </span>
           </p>
         </div>
 
@@ -48,7 +50,7 @@ const Programs = () => {
           {programs.map((program, index) => (
             <div
               key={index}
-              className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20"
+              className="group bg-white/15 backdrop-blur-md rounded-2xl p-8 border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20 shadow-lg shadow-black/50"
             >
               <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${program.color} mb-6 group-hover:shadow-lg transition-all duration-300`}>
                 <program.icon className="w-8 h-8 text-black" />
@@ -58,13 +60,9 @@ const Programs = () => {
                 {program.title}
               </h3>
               
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                {program.description}
-              </p>
-              
               <ul className="space-y-2">
                 {program.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-sm text-gray-400">
+                  <li key={idx} className="flex items-center text-sm text-gray-200 font-medium">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
                     {feature}
                   </li>

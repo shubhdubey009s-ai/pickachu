@@ -13,8 +13,10 @@ const Hero = () => {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Discover your incredible potential with our exceptional fitness programs crafted to accelerate 
-            your weight loss journey, amplify your strength, and create your amazing body transformation.
+            <span className="text-gray-100 font-medium">
+              Discover your incredible potential with our exceptional fitness programs crafted to accelerate 
+              your weight loss journey, amplify your strength, and create your amazing body transformation.
+            </span>
           </p>
         </div>
 
@@ -31,17 +33,17 @@ const Hero = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-300 hover:transform hover:scale-105">
+          <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:transform hover:scale-105 shadow-lg shadow-black/50">
             <div className="text-3xl font-bold text-yellow-400 mb-2">500+</div>
-            <div className="text-gray-300">Success Stories</div>
+            <div className="text-gray-100 font-medium">Success Stories</div>
           </div>
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-300 hover:transform hover:scale-105">
+          <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:transform hover:scale-105 shadow-lg shadow-black/50">
             <div className="text-3xl font-bold text-yellow-400 mb-2">50+</div>
-            <div className="text-gray-300">Expert Trainers</div>
+            <div className="text-gray-100 font-medium">Expert Trainers</div>
           </div>
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-300 hover:transform hover:scale-105">
+          <div className="bg-white/15 backdrop-blur-md rounded-2xl p-6 border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-300 hover:transform hover:scale-105 shadow-lg shadow-black/50">
             <div className="text-3xl font-bold text-yellow-400 mb-2">24/7</div>
-            <div className="text-gray-300">Support Available</div>
+            <div className="text-gray-100 font-medium">Support Available</div>
           </div>
         </div>
       </div>
