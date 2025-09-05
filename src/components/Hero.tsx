@@ -112,7 +112,7 @@ const Hero = () => {
               backgroundPosition: { duration: 3, ease: 'easeInOut', repeat: Infinity }
             }}
           >
-            Transform Your Body & Mind
+             
           </motion.h1>
 
           <motion.p
