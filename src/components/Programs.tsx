@@ -7,7 +7,7 @@ const Programs = () => {
 
   // Smooth parallax scroll
   const { scrollYProgress } = useScroll({
-    target: containerRef,
+    target: containerRef, 
     offset: ["start end", "end start"],
   });
   const smooth = useSpring(scrollYProgress, { stiffness: 80, damping: 30 });
@@ -28,7 +28,7 @@ const Programs = () => {
         "Progress tracking",
         "24/7 support",
       ],
-      color: "from-gray-500/20 via-gray-700/10 to-gray-900/10",
+      color: "from-yellow-400/20 via-yellow-500/10 to-amber-500/10",
     },
     {
       icon: Zap,
@@ -39,7 +39,7 @@ const Programs = () => {
         "Muscle building",
         "Recovery plans",
       ],
-      color: "from-gray-400/20 via-gray-600/10 to-gray-800/10",
+      color: "from-orange-400/20 via-orange-500/10 to-red-500/10",
     },
     {
       icon: Heart,
@@ -50,7 +50,7 @@ const Programs = () => {
         "Habit formation",
         "Mindful eating",
       ],
-      color: "from-gray-400/20 via-gray-500/10 to-gray-700/10",
+      color: "from-yellow-300/20 via-yellow-400/10 to-yellow-500/10",
     },
     {
       icon: Trophy,
@@ -61,7 +61,7 @@ const Programs = () => {
         "Posing practice",
         "Stage ready",
       ],
-      color: "from-gray-500/20 via-gray-700/10 to-gray-900/10",
+      color: "from-yellow-500/20 via-amber-500/10 to-orange-400/10",
     },
   ];
 
@@ -69,12 +69,12 @@ const Programs = () => {
     <section
       ref={containerRef}
       id="programs"
-      className="relative min-h-screen overflow-hidden bg-[#030711]" // black background
+      className="relative min-h-screen overflow-hidden bg-gradient-to-b from-gray-950 via-black to-gray-950"
     >
       {/* Background parallax */}
       <motion.div className="absolute inset-0" style={{ y: bgY }}>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.04),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.03),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,215,0,0.08),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,165,0,0.06),transparent_60%)]" />
       </motion.div>
 
       {/* Floating geometric midground */}
@@ -83,13 +83,13 @@ const Programs = () => {
           className="absolute top-1/4 left-1/4 w-32 h-32 md:w-56 md:h-56"
           style={{ rotate, scale }}
         >
-          <div className="w-full h-full rounded-3xl bg-gradient-to-br from-gray-500/10 to-gray-800/5 border border-gray-400/10 shadow-2xl" />
+          <div className="w-full h-full rounded-3xl bg-gradient-to-br from-yellow-400/10 to-orange-500/5 border border-yellow-400/10 shadow-2xl" />
         </motion.div>
         <motion.div
           className="absolute bottom-1/4 right-1/4 w-24 h-24 md:w-48 md:h-48"
           style={{ rotate, scale }}
         >
-          <div className="w-full h-full rounded-full bg-gradient-to-tr from-gray-600/10 to-gray-900/5 border border-gray-400/10 shadow-2xl" />
+          <div className="w-full h-full rounded-full bg-gradient-to-tr from-orange-500/10 to-red-500/5 border border-orange-400/10 shadow-2xl" />
         </motion.div>
       </motion.div>
 
@@ -108,17 +108,17 @@ const Programs = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
-              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                 Our Programs
               </span>
             </h2>
-            <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
               Choose from expertly crafted programs designed to help you achieve
               your goals with precision, accountability, and world-class support.
             </p>
           </motion.div>
 
-          {/* Program cards */}
+          {/* Program cards with cinematic effects */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {programs.map((program, i) => (
               <motion.div
@@ -128,7 +128,7 @@ const Programs = () => {
                 transition={{ duration: 0.8, delay: i * 0.2, type: "spring" }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05, rotateY: 8 }}
-                className="relative overflow-hidden rounded-3xl p-6 bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl hover:border-gray-400/40 transition-all duration-500"
+                className="relative overflow-hidden rounded-3xl p-6 bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl hover:border-yellow-400/40 transition-all duration-500"
               >
                 {/* glowing accents */}
                 <div
@@ -139,8 +139,8 @@ const Programs = () => {
                 />
 
                 {/* icon */}
-                <div className="relative inline-flex items-center justify-center h-12 w-12 rounded-2xl bg-gray-400/10 ring-1 ring-gray-500/30 mb-4">
-                  <program.icon className="h-6 w-6 text-white" />
+                <div className="relative inline-flex items-center justify-center h-12 w-12 rounded-2xl bg-yellow-500/10 ring-1 ring-yellow-400/30 mb-4">
+                  <program.icon className="h-6 w-6 text-yellow-400" />
                 </div>
 
                 {/* title */}
@@ -149,14 +149,14 @@ const Programs = () => {
                 </h3>
 
                 {/* features */}
-                <ul className="list-none space-y-1.5 text-sm md:text-base text-gray-400 leading-relaxed">
+                <ul className="list-none space-y-1.5 text-sm md:text-base text-gray-300 leading-relaxed">
                   {program.features.map((f, idx) => (
                     <li key={idx}>{f}</li>
                   ))}
                 </ul>
 
                 {/* bottom accent */}
-                <div className="mt-5 h-px w-full bg-gradient-to-r from-transparent via-gray-400/30 to-transparent" />
+                <div className="mt-5 h-px w-full bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent" />
               </motion.div>
             ))}
           </div>
@@ -168,7 +168,7 @@ const Programs = () => {
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 md:w-2 md:h-2 bg-white/30 rounded-full"
+            className="absolute w-1 h-1 md:w-2 md:h-2 bg-yellow-400/30 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
