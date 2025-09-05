@@ -7,7 +7,7 @@ const Programs = () => {
 
   // Smooth parallax scroll
   const { scrollYProgress } = useScroll({
-    target: containerRef, 
+    target: containerRef,
     offset: ["start end", "end start"],
   });
   const smooth = useSpring(scrollYProgress, { stiffness: 80, damping: 30 });
