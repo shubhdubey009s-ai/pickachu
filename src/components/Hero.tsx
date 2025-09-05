@@ -121,8 +121,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 2 }}
           >
-            Discover your incredible potential with our exceptional fitness programs crafted to accelerate
-            your journey, amplify your strength, and create your amazing body transformation.
+            
           </motion.p>
 
           {/* CTA buttons */}
