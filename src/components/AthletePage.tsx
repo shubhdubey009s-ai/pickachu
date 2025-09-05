@@ -96,4 +96,4 @@ const CoachSection: React.FC = () => {
   );
 };
 
-export default CoachSection;
+export default CoachSection; 
