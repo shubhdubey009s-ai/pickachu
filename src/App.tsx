@@ -17,7 +17,6 @@ function App() {
         <Hero />
         <Programs />
         <AthletePage />
-        <Athletes/>
         <Courses />
         <Testimonials />
         <Footer />
