@@ -52,14 +52,14 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
 
       {/* Logo centerpiece */}
-      <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+      <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none" style={{ top: '-10%' }}>
         <motion.div
           initial={{ opacity: 0, scale: 0.5, rotateY: -180 }}
           animate={{ opacity: 1, scale: 1, rotateY: 0, rotateZ: 360 }}
           transition={{ duration: 3.5, delay: 0.5 }}
         >
           <motion.div
-            className="relative w-[32rem] h-[32rem] sm:w-[40rem] sm:h-[40rem] lg:w-[48rem] lg:h-[48rem] flex items-center justify-center"
+            className="relative w-[24rem] h-[24rem] sm:w-[28rem] sm:h-[28rem] lg:w-[32rem] lg:h-[32rem] flex items-center justify-center"
             whileHover={{ scale: 1.05, filter: 'drop-shadow(0 0 50px rgba(212, 175, 55, 0.4))' }}
           >
             <motion.img
@@ -93,7 +93,7 @@ const Hero = () => {
       </div>
 
       {/* Main content */}
-      <div className="relative z-30 flex items-center justify-center min-h-screen px-4">
+      <div className="relative z-30 flex items-end justify-center min-h-screen px-4 pb-32">
         <motion.div className="text-center max-w-6xl" style={{ y: textY }}>
           <motion.h1
             className="text-5xl sm:text-7xl lg:text-8xl font-black leading-none"
