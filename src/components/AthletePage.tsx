@@ -32,7 +32,7 @@ const CoachSection: React.FC = () => {
               />
             </div>
             <div className="absolute -right-6 top-1/2 -translate-y-1/2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl p-4 shadow-lg">
-              <p className="text-black font-bold">Founder</p>
+              <p className="text-black font-bold">CLC Founder</p>
             </div>
           </motion.div>
 
