@@ -16,8 +16,8 @@ function App() {
         <Header />
         <Hero />
         <Programs />
-        <AthletePage />
         <Courses />
+        <AthletePage />
         <Testimonials />
         <Footer />
       </div>
