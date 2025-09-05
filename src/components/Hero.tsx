@@ -59,7 +59,7 @@ const Hero = () => {
           transition={{ duration: 3.5, delay: 0.5 }}
         >
           <motion.div
-            className="relative w-[24rem] h-[24rem] sm:w-[28rem] sm:h-[28rem] lg:w-[32rem] lg:h-[32rem] flex items-center justify-center"
+            className="relative w-[28rem] h-[28rem] sm:w-[32rem] sm:h-[32rem] lg:w-[36rem] lg:h-[36rem] flex items-center justify-center"
             whileHover={{ scale: 1.05, filter: 'drop-shadow(0 0 50px rgba(212, 175, 55, 0.4))' }}
           >
             <motion.img
@@ -93,7 +93,7 @@ const Hero = () => {
       </div>
 
       {/* Main content */}
-      <div className="relative z-30 flex items-end justify-center min-h-screen px-4 pb-32">
+      <div className="relative z-30 flex items-end justify-center min-h-screen px-4 pb-16">
         <motion.div className="text-center max-w-6xl" style={{ y: textY }}>
           <motion.h1
             className="text-5xl sm:text-7xl lg:text-8xl font-black leading-none"
@@ -126,7 +126,7 @@ const Hero = () => {
 
           {/* CTA buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-16"
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-8"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 3 }}
