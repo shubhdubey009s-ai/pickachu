@@ -5,7 +5,7 @@ import { Target, Zap, Heart, Trophy } from "lucide-react";
 const Programs = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Smooth parallax scroll
+  // Smooth parallax scroll 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
