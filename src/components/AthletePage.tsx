@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const AthleteSection: React.FC = () => {
+const AthleteShowcase: React.FC = () => {
   const athletePhotos = [
     "https://i.imgur.com/I4fuwum.jpeg",
     "https://i.imgur.com/AtN1JYY.jpeg",
@@ -11,11 +11,11 @@ const AthleteSection: React.FC = () => {
   const testimonials = [
     {
       name: "Rohit Sharma",
-      text: "Training with Coach Aditya has completely transformed my physique and mindset.",
+      text: "Training with Aditya has completely transformed my physique and mindset.",
     },
     {
       name: "Neha Kapoor",
-      text: "Aditya pushed me beyond limits I never thought I could cross. His methods are effective and motivating.",
+      text: "He pushed me beyond limits I never thought I could cross. Highly motivating and effective.",
     },
     {
       name: "Arjun Mehta",
@@ -24,34 +24,52 @@ const AthleteSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-28 px-6 bg-black text-white">
-      <div className="max-w-7xl mx-auto space-y-20">
-        
-        {/* Hero Heading */}
-        <motion.div
-          className="text-center space-y-6"
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="text-5xl md:text-6xl font-extrabold">
-            <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-              Champion Athletes
-            </span>
-          </h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Stories, testimonials, and highlights from athletes who transformed
-            their lives with Coach Aditya.
-          </p>
-        </motion.div>
+    <div className="bg-black text-white font-sans">
+      {/* Hero Section */}
+      <section className="relative h-screen flex flex-col justify-center items-center text-center overflow-hidden">
+        <motion.img
+          src="https://i.imgur.com/JHK262n.jpeg"
+          alt="Hero Athlete"
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-30"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
+        />
+        <div className="relative z-10 space-y-6">
+          <motion.h1
+            className="text-6xl md:text-7xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            The Golden Fitness Journey
+          </motion.h1>
+          <motion.p
+            className="text-lg text-gray-300 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+          >
+            Inspiring stories, transformations, and training highlights that
+            define true dedication.
+          </motion.p>
+          <motion.button
+            className="px-6 py-3 bg-yellow-500 text-black font-semibold rounded-xl shadow-lg hover:scale-105 transition-transform"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Join the Journey
+          </motion.button>
+        </div>
+      </section>
 
-        {/* Golden Grid */}
+      {/* Content Grid */}
+      <section className="py-24 px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          
           {/* Video 1 */}
           <motion.div
-            className="relative rounded-2xl border border-yellow-500/40 bg-gradient-to-b from-black/80 to-black p-2 shadow-lg shadow-yellow-500/20"
-            initial={{ opacity: 0, y: 40 }}
+            className="relative rounded-2xl border border-yellow-500/40 bg-gradient-to-b from-black to-black/80 p-2 shadow-lg shadow-yellow-500/30"
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
@@ -69,7 +87,7 @@ const AthleteSection: React.FC = () => {
           {/* Testimonial 1 */}
           <motion.div
             className="rounded-2xl border border-yellow-500/40 bg-gradient-to-b from-yellow-500/10 to-black p-8 shadow-lg shadow-yellow-500/20 flex flex-col justify-between"
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
@@ -81,8 +99,8 @@ const AthleteSection: React.FC = () => {
 
           {/* Video 2 */}
           <motion.div
-            className="relative rounded-2xl border border-yellow-500/40 bg-gradient-to-b from-black/80 to-black p-2 shadow-lg shadow-yellow-500/20"
-            initial={{ opacity: 0, y: 40 }}
+            className="relative rounded-2xl border border-yellow-500/40 bg-gradient-to-b from-black to-black/80 p-2 shadow-lg shadow-yellow-500/30"
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
@@ -114,25 +132,23 @@ const AthleteSection: React.FC = () => {
             </motion.div>
           ))}
 
-          {/* Remaining Testimonials */}
+          {/* More Testimonials */}
           {testimonials.slice(1).map((t, idx) => (
             <motion.div
               key={idx}
               className="rounded-2xl border border-yellow-500/40 bg-gradient-to-b from-yellow-500/10 to-black p-8 shadow-lg shadow-yellow-500/20 flex flex-col justify-between"
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 + idx * 0.2 }}
             >
               <p className="text-lg italic text-gray-200">“{t.text}”</p>
-              <span className="mt-6 font-semibold text-yellow-400">
-                – {t.name}
-              </span>
+              <span className="mt-6 font-semibold text-yellow-400">– {t.name}</span>
             </motion.div>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
-export default AthleteSection;
+export default AthleteShowcase;
