@@ -24,33 +24,41 @@ const AthleteSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-black via-gray-900 to-black text-white">
-      <div className="max-w-7xl mx-auto space-y-16">
+    <section className="py-28 px-6 bg-black text-white">
+      <div className="max-w-7xl mx-auto space-y-20">
         
-        {/* Section Heading */}
-        <motion.h2
-          className="text-5xl font-extrabold text-center"
-          initial={{ opacity: 0, y: -20 }}
+        {/* Hero Heading */}
+        <motion.div
+          className="text-center space-y-6"
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
         >
-          Athletes & Stories
-        </motion.h2>
+          <h1 className="text-5xl md:text-6xl font-extrabold">
+            <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+              Champion Athletes
+            </span>
+          </h1>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            Stories, testimonials, and highlights from athletes who transformed
+            their lives with Coach Aditya.
+          </p>
+        </motion.div>
 
-        {/* Featured Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Golden Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           
           {/* Video 1 */}
           <motion.div
-            className="relative overflow-hidden rounded-2xl shadow-lg bg-black"
+            className="relative rounded-2xl border border-yellow-500/40 bg-gradient-to-b from-black/80 to-black p-2 shadow-lg shadow-yellow-500/20"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            <div className="relative pt-[176.67%]">
+            <div className="relative pt-[176.67%] overflow-hidden rounded-xl">
               <iframe
                 src="https://player.vimeo.com/video/1116145794?badge=0&autopause=0&autoplay=1&loop=1"
-                className="absolute top-0 left-0 w-full h-full rounded-2xl"
+                className="absolute top-0 left-0 w-full h-full rounded-xl"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 title="Athlete Video 1"
@@ -58,30 +66,30 @@ const AthleteSection: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Testimonial Card */}
+          {/* Testimonial 1 */}
           <motion.div
-            className="bg-blue-600 p-6 rounded-2xl shadow-lg flex flex-col justify-between"
+            className="rounded-2xl border border-yellow-500/40 bg-gradient-to-b from-yellow-500/10 to-black p-8 shadow-lg shadow-yellow-500/20 flex flex-col justify-between"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="text-lg italic">“{testimonials[0].text}”</p>
-            <span className="mt-4 font-semibold text-white/90">
+            <p className="text-lg italic text-gray-200">“{testimonials[0].text}”</p>
+            <span className="mt-6 font-semibold text-yellow-400">
               – {testimonials[0].name}
             </span>
           </motion.div>
 
           {/* Video 2 */}
           <motion.div
-            className="relative overflow-hidden rounded-2xl shadow-lg bg-black"
+            className="relative rounded-2xl border border-yellow-500/40 bg-gradient-to-b from-black/80 to-black p-2 shadow-lg shadow-yellow-500/20"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="relative pt-[100%]">
+            <div className="relative pt-[100%] overflow-hidden rounded-xl">
               <iframe
                 src="https://player.vimeo.com/video/1116145513?badge=0&autopause=0&autoplay=1&loop=1"
-                className="absolute top-0 left-0 w-full h-full rounded-2xl"
+                className="absolute top-0 left-0 w-full h-full rounded-xl"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 title="Athlete Video 2"
@@ -93,30 +101,30 @@ const AthleteSection: React.FC = () => {
           {athletePhotos.map((src, idx) => (
             <motion.div
               key={idx}
-              className="overflow-hidden rounded-2xl shadow-lg bg-black"
+              className="rounded-2xl border border-yellow-500/40 bg-gradient-to-b from-yellow-500/10 to-black overflow-hidden shadow-lg shadow-yellow-500/20"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: idx * 0.2 }}
+              transition={{ duration: 0.8, delay: idx * 0.2 }}
             >
               <img
                 src={src}
                 alt={`Athlete ${idx + 1}`}
-                className="w-full h-72 object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-80 object-cover hover:scale-105 transition-transform duration-500"
               />
             </motion.div>
           ))}
 
-          {/* More Testimonials */}
+          {/* Remaining Testimonials */}
           {testimonials.slice(1).map((t, idx) => (
             <motion.div
               key={idx}
-              className="bg-blue-600 p-6 rounded-2xl shadow-lg flex flex-col justify-between"
+              className="rounded-2xl border border-yellow-500/40 bg-gradient-to-b from-yellow-500/10 to-black p-8 shadow-lg shadow-yellow-500/20 flex flex-col justify-between"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 + idx * 0.2 }}
+              transition={{ duration: 0.8, delay: 0.4 + idx * 0.2 }}
             >
-              <p className="text-lg italic">“{t.text}”</p>
-              <span className="mt-4 font-semibold text-white/90">
+              <p className="text-lg italic text-gray-200">“{t.text}”</p>
+              <span className="mt-6 font-semibold text-yellow-400">
                 – {t.name}
               </span>
             </motion.div>
