@@ -11,35 +11,38 @@ const AthleteSection: React.FC = () => {
   const testimonials = [
     {
       name: "Rohit Sharma",
-      text: "Training with Coach Aditya has completely transformed my physique and mindset. I feel stronger and more disciplined than ever.",
+      text: "Training with Coach Aditya has completely transformed my physique and mindset.",
     },
     {
       name: "Neha Kapoor",
-      text: "Aditya pushed me beyond limits I never thought I could cross. His methods are effective, motivating, and sustainable.",
+      text: "Aditya pushed me beyond limits I never thought I could cross. His methods are effective and motivating.",
     },
     {
       name: "Arjun Mehta",
-      text: "I lost 15kg in 4 months and built lean muscle. Couldn’t have done it without this guidance and accountability.",
+      text: "I lost 15kg in 4 months and built lean muscle. Couldn’t have done it without his guidance.",
     },
   ];
 
   return (
-    <section className="py-20 px-4 bg-black">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <section className="py-20 px-6 bg-gradient-to-b from-black via-gray-900 to-black text-white">
+      <div className="max-w-7xl mx-auto space-y-16">
+        
+        {/* Section Heading */}
         <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center text-yellow-400"
+          className="text-5xl font-extrabold text-center"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Athletes & Testimonials
+          Athletes & Stories
         </motion.h2>
 
-        {/* Masonry-style grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
-          {/* Vimeo Video 1 */}
+        {/* Featured Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          {/* Video 1 */}
           <motion.div
-            className="relative overflow-hidden rounded-2xl shadow-lg"
+            className="relative overflow-hidden rounded-2xl shadow-lg bg-black"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -55,12 +58,25 @@ const AthleteSection: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Vimeo Video 2 */}
+          {/* Testimonial Card */}
           <motion.div
-            className="relative overflow-hidden rounded-2xl shadow-lg"
+            className="bg-blue-600 p-6 rounded-2xl shadow-lg flex flex-col justify-between"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <p className="text-lg italic">“{testimonials[0].text}”</p>
+            <span className="mt-4 font-semibold text-white/90">
+              – {testimonials[0].name}
+            </span>
+          </motion.div>
+
+          {/* Video 2 */}
+          <motion.div
+            className="relative overflow-hidden rounded-2xl shadow-lg bg-black"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
             <div className="relative pt-[100%]">
               <iframe
@@ -77,7 +93,7 @@ const AthleteSection: React.FC = () => {
           {athletePhotos.map((src, idx) => (
             <motion.div
               key={idx}
-              className="overflow-hidden rounded-2xl shadow-lg"
+              className="overflow-hidden rounded-2xl shadow-lg bg-black"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: idx * 0.2 }}
@@ -85,22 +101,22 @@ const AthleteSection: React.FC = () => {
               <img
                 src={src}
                 alt={`Athlete ${idx + 1}`}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-72 object-cover hover:scale-105 transition-transform duration-500"
               />
             </motion.div>
           ))}
 
-          {/* Testimonials */}
-          {testimonials.map((t, idx) => (
+          {/* More Testimonials */}
+          {testimonials.slice(1).map((t, idx) => (
             <motion.div
               key={idx}
-              className="bg-white/5 border border-yellow-500/20 p-6 rounded-2xl shadow-lg flex flex-col justify-center"
+              className="bg-blue-600 p-6 rounded-2xl shadow-lg flex flex-col justify-between"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 + idx * 0.2 }}
+              transition={{ duration: 0.6, delay: 0.4 + idx * 0.2 }}
             >
-              <p className="text-gray-200 italic">“{t.text}”</p>
-              <span className="mt-4 text-yellow-400 font-semibold">
+              <p className="text-lg italic">“{t.text}”</p>
+              <span className="mt-4 font-semibold text-white/90">
                 – {t.name}
               </span>
             </motion.div>
