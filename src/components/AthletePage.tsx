@@ -1,154 +1,99 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Award, Target, Trophy, Heart } from 'lucide-react';
 
-const AthleteShowcase: React.FC = () => {
-  const athletePhotos = [
-    "https://i.imgur.com/I4fuwum.jpeg",
-    "https://i.imgur.com/AtN1JYY.jpeg",
-    "https://i.imgur.com/JHK262n.jpeg",
-  ];
-
-  const testimonials = [
-    {
-      name: "Rohit Sharma",
-      text: "Training with Aditya has completely transformed my physique and mindset.",
-    },
-    {
-      name: "Neha Kapoor",
-      text: "He pushed me beyond limits I never thought I could cross. Highly motivating and effective.",
-    },
-    {
-      name: "Arjun Mehta",
-      text: "I lost 15kg in 4 months and built lean muscle. Couldn’t have done it without his guidance.",
-    },
+const CoachSection: React.FC = () => {
+  const certifications = [
+    { name: "Certified Personal Trainer", icon: Award },
+    { name: "Sports Nutrition Specialist", icon: Target },
+    { name: "Bodybuilding Coach", icon: Trophy },
+    { name: "Wellness Coach", icon: Heart },
   ];
 
   return (
-    <div className="bg-black text-white font-sans">
-      {/* Hero Section */}
-      <section className="relative h-screen flex flex-col justify-center items-center text-center overflow-hidden">
-        <motion.img
-          src="https://i.imgur.com/JHK262n.jpeg"
-          alt="Hero Athlete"
-          className="absolute top-0 left-0 w-full h-full object-cover opacity-30"
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
-        />
-        <div className="relative z-10 space-y-6">
-          <motion.h1
-            className="text-6xl md:text-7xl font-extrabold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            The Golden Fitness Journey
-          </motion.h1>
-          <motion.p
-            className="text-lg text-gray-300 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-          >
-            Inspiring stories, transformations, and training highlights that
-            define true dedication.
-          </motion.p>
-          <motion.button
-            className="px-6 py-3 bg-yellow-500 text-black font-semibold rounded-xl shadow-lg hover:scale-105 transition-transform"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Join the Journey
-          </motion.button>
-        </div>
-      </section>
-
-      {/* Content Grid */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {/* Video 1 */}
+    <section className="py-20 px-4 bg-black">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Image Section */}
           <motion.div
-            className="relative rounded-2xl border border-yellow-500/40 bg-gradient-to-b from-black to-black/80 p-2 shadow-lg shadow-yellow-500/30"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="relative pt-[176.67%] overflow-hidden rounded-xl">
-              <iframe
-                src="https://player.vimeo.com/video/1116145794?badge=0&autopause=0&autoplay=1&loop=1"
-                className="absolute top-0 left-0 w-full h-full rounded-xl"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                title="Athlete Video 1"
-              ></iframe>
-            </div>
-          </motion.div>
-
-          {/* Testimonial 1 */}
-          <motion.div
-            className="rounded-2xl border border-yellow-500/40 bg-gradient-to-b from-yellow-500/10 to-black p-8 shadow-lg shadow-yellow-500/20 flex flex-col justify-between"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative flex justify-center"
           >
-            <p className="text-lg italic text-gray-200">“{testimonials[0].text}”</p>
-            <span className="mt-6 font-semibold text-yellow-400">
-              – {testimonials[0].name}
-            </span>
-          </motion.div>
-
-          {/* Video 2 */}
-          <motion.div
-            className="relative rounded-2xl border border-yellow-500/40 bg-gradient-to-b from-black to-black/80 p-2 shadow-lg shadow-yellow-500/30"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <div className="relative pt-[100%] overflow-hidden rounded-xl">
-              <iframe
-                src="https://player.vimeo.com/video/1116145513?badge=0&autopause=0&autoplay=1&loop=1"
-                className="absolute top-0 left-0 w-full h-full rounded-xl"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                title="Athlete Video 2"
-              ></iframe>
+            <div className="relative w-80 h-96 rounded-3xl overflow-hidden border-4 border-yellow-500/30 shadow-2xl shadow-yellow-500/20">
+              <img
+                src="https://i.imgur.com/Gbs73eG.jpeg"
+                alt="Coach Aditya"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div className="absolute -right-6 top-1/2 -translate-y-1/2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl p-4 shadow-lg">
+              <p className="text-black font-bold">CLC Founder</p>
             </div>
           </motion.div>
 
-          {/* Athlete Photos */}
-          {athletePhotos.map((src, idx) => (
-            <motion.div
-              key={idx}
-              className="rounded-2xl border border-yellow-500/40 bg-gradient-to-b from-yellow-500/10 to-black overflow-hidden shadow-lg shadow-yellow-500/20"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: idx * 0.2 }}
-            >
-              <img
-                src={src}
-                alt={`Athlete ${idx + 1}`}
-                className="w-full h-80 object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
-          ))}
+          {/* Text + Certifications */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="space-y-8"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Meet Your <br />
+              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                Coach Aditya
+              </span>
+            </h2>
 
-          {/* More Testimonials */}
-          {testimonials.slice(1).map((t, idx) => (
-            <motion.div
-              key={idx}
-              className="rounded-2xl border border-yellow-500/40 bg-gradient-to-b from-yellow-500/10 to-black p-8 shadow-lg shadow-yellow-500/20 flex flex-col justify-between"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 + idx * 0.2 }}
+            <p className="text-lg text-gray-200 leading-relaxed">
+              Aditya Sandu is a passionate athlete and coach, dedicated to transforming lives through fitness. 
+              With experience across multiple sports, bodybuilding, and personal training, he has guided 
+              hundreds of clients towards healthier, stronger lifestyles.
+            </p>
+
+            {/* Certifications */}
+            <div className="bg-white/5 backdrop-blur-sm border border-yellow-500/20 rounded-2xl p-6 md:p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <Award className="w-7 h-7 text-yellow-400" />
+                <h3 className="text-yellow-400 text-lg font-semibold">Accreditations</h3>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {certifications.map((cert, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                    className="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-4 flex items-center space-x-3 hover:bg-yellow-500/20 transition-all duration-300"
+                  >
+                    <cert.icon className="w-5 h-5 text-yellow-400" />
+                    <span className="text-sm text-gray-200">{cert.name}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA Button */}
+            <motion.button
+              className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-8 py-4 rounded-full font-bold text-lg hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() =>
+                window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')
+              }
             >
-              <p className="text-lg italic text-gray-200">“{t.text}”</p>
-              <span className="mt-6 font-semibold text-yellow-400">– {t.name}</span>
-            </motion.div>
-          ))}
+              Work With Me
+            </motion.button>
+          </motion.div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
-export default AthleteShowcase;
+export default CoachSection;
