@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Star, Quote } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Testimonials = () => {
   const testimonials = [
@@ -53,14 +53,22 @@ const Testimonials = () => {
   // Auto toggle every 5s
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % testimonials.length);
+      handleNext();
     }, 5000);
     return () => clearInterval(interval);
-  }, [testimonials.length]);
+  }, []);
+
+  const handlePrev = () => {
+    setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const handleNext = () => {
+    setIndex((prev) => (prev + 1) % testimonials.length);
+  };
 
   return (
     <section className="py-20 px-4 bg-transparent">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
@@ -76,67 +84,79 @@ const Testimonials = () => {
         </div>
 
         {/* Carousel */}
-        <div className="relative h-[500px] flex items-center justify-center">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.6 }}
-              className="w-full max-w-lg group bg-white/15 backdrop-blur-md rounded-3xl p-8 border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-500 relative overflow-hidden shadow-lg shadow-black/50"
-            >
-              {/* Quote icon */}
-              <div className="absolute top-6 right-6 opacity-20">
-                <Quote className="w-8 h-8 text-yellow-400" />
-              </div>
+        <div className="relative flex items-center justify-center">
+          {/* Left Arrow */}
+          <button 
+            onClick={handlePrev}
+            className="absolute left-0 z-10 p-3 bg-black/40 rounded-full hover:bg-yellow-500/70 transition"
+          >
+            <ChevronLeft className="w-6 h-6 text-white" />
+          </button>
 
-              {/* Customer photo */}
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-yellow-500/30 shadow-lg shadow-yellow-500/20 mr-4">
-                  <img 
-                    src={testimonials[index].image} 
-                    alt={`${testimonials[index].name} - Customer testimonial`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-white group-hover:text-yellow-400 transition-colors">
-                    {testimonials[index].name}
-                  </h4>
-                  <p className="text-sm text-gray-200 font-medium">{testimonials[index].title}</p>
-                </div>
-              </div>
+          {/* Testimonials wrapper */}
+          <div className="flex overflow-hidden w-full max-w-5xl">
+            {testimonials.map((testimonial, i) => {
+              // positioning
+              let position = "scale-75 opacity-50 blur-sm";
+              if (i === index) position = "scale-100 opacity-100 blur-0 z-10";
+              else if (i === (index - 1 + testimonials.length) % testimonials.length) position = "scale-90 opacity-80 -translate-x-12";
+              else if (i === (index + 1) % testimonials.length) position = "scale-90 opacity-80 translate-x-12";
 
-              {/* Star rating */}
-              <div className="flex space-x-1 mb-4">
-                {[...Array(testimonials[index].rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
+              return (
+                <motion.div
+                  key={i}
+                  className={`flex-shrink-0 w-full sm:w-2/3 md:w-1/2 lg:w-1/3 px-4 transition-all duration-500 ease-in-out ${position}`}
+                >
+                  <div className="group bg-white/15 backdrop-blur-md rounded-3xl p-8 border border-yellow-500/30 relative overflow-hidden shadow-lg shadow-black/50">
+                    {/* Quote icon */}
+                    <div className="absolute top-6 right-6 opacity-20">
+                      <Quote className="w-8 h-8 text-yellow-400" />
+                    </div>
 
-              {/* Testimonial text */}
-              <p className="text-gray-100 leading-relaxed text-base mb-6 font-medium">
-                "{testimonials[index].text}"
-              </p>
+                    {/* Customer photo */}
+                    <div className="flex items-center mb-6">
+                      <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-yellow-500/30 shadow-lg shadow-yellow-500/20 mr-4">
+                        <img 
+                          src={testimonial.image} 
+                          alt={`${testimonial.name} - Customer testimonial`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-white group-hover:text-yellow-400 transition-colors">
+                          {testimonial.name}
+                        </h4>
+                        <p className="text-sm text-gray-200 font-medium">{testimonial.title}</p>
+                      </div>
+                    </div>
 
-              {/* Decorative bottom accent */}
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 to-orange-500"></div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
+                    {/* Star rating */}
+                    <div className="flex space-x-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, starIndex) => (
+                        <Star key={starIndex} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
 
-        {/* Dots navigation */}
-        <div className="flex justify-center mt-6 space-x-3">
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setIndex(i)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                i === index ? "bg-yellow-400 scale-125" : "bg-gray-500"
-              }`}
-            />
-          ))}
+                    {/* Testimonial text */}
+                    <p className="text-gray-100 leading-relaxed text-base mb-6 font-medium">
+                      "{testimonial.text}"
+                    </p>
+
+                    {/* Decorative bottom accent */}
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 to-orange-500"></div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Right Arrow */}
+          <button 
+            onClick={handleNext}
+            className="absolute right-0 z-10 p-3 bg-black/40 rounded-full hover:bg-yellow-500/70 transition"
+          >
+            <ChevronRight className="w-6 h-6 text-white" />
+          </button>
         </div>
 
         {/* Call to action */}
