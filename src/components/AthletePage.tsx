@@ -126,3 +126,4 @@ const AthleteSection: React.FC = () => {
 };
 
 export default AthleteSection;
+ 
