@@ -1,4 +1,5 @@
 import React from "react";
+import CoachSection from "./CoachSection";
 import { motion } from "framer-motion";
 
 const AthleteSection: React.FC = () => {
@@ -106,7 +107,7 @@ const AthleteSection: React.FC = () => {
             </motion.div>
           ))}
 
-          {/* More Testimonials */}
+          {/* Testimonials */}
           {testimonials.slice(1).map((t, idx) => (
             <motion.div
               key={idx}
@@ -125,5 +126,16 @@ const AthleteSection: React.FC = () => {
   );
 };
 
-export default AthleteSection;
- 
+const Page: React.FC = () => {
+  return (
+    <div className="bg-black">
+      {/* Coach Section */}
+      <CoachSection />
+
+      {/* Athlete Section */}
+      <AthleteSection />
+    </div>
+  );
+};
+
+export default Page;
