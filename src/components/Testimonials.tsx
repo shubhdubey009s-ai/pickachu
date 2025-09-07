@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Star, Quote } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Testimonials = () => {
   const testimonials = [
@@ -47,9 +48,19 @@ const Testimonials = () => {
     }
   ];
 
+  const [index, setIndex] = useState(0);
+
+  // Auto toggle every 5s
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
   return (
     <section className="py-20 px-4 bg-transparent">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
@@ -64,11 +75,16 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div
+        {/* Carousel */}
+        <div className="relative h-[500px] flex items-center justify-center">
+          <AnimatePresence mode="wait">
+            <motion.div
               key={index}
-              className="group bg-white/15 backdrop-blur-md rounded-3xl p-8 border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/30 relative overflow-hidden shadow-lg shadow-black/50"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.6 }}
+              className="w-full max-w-lg group bg-white/15 backdrop-blur-md rounded-3xl p-8 border border-yellow-500/30 hover:border-yellow-500/50 transition-all duration-500 relative overflow-hidden shadow-lg shadow-black/50"
             >
               {/* Quote icon */}
               <div className="absolute top-6 right-6 opacity-20">
@@ -79,34 +95,47 @@ const Testimonials = () => {
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-yellow-500/30 shadow-lg shadow-yellow-500/20 mr-4">
                   <img 
-                    src={testimonial.image} 
-                    alt={`${testimonial.name} - Customer testimonial`}
+                    src={testimonials[index].image} 
+                    alt={`${testimonials[index].name} - Customer testimonial`}
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-white group-hover:text-yellow-400 transition-colors">
-                    {testimonial.name}
+                    {testimonials[index].name}
                   </h4>
-                  <p className="text-sm text-gray-200 font-medium">{testimonial.title}</p>
+                  <p className="text-sm text-gray-200 font-medium">{testimonials[index].title}</p>
                 </div>
               </div>
 
               {/* Star rating */}
               <div className="flex space-x-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
+                {[...Array(testimonials[index].rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
 
               {/* Testimonial text */}
-              <p className="text-gray-100 leading-relaxed text-base mb-6 line-clamp-6 font-medium">
-                "{testimonial.text}"
+              <p className="text-gray-100 leading-relaxed text-base mb-6 font-medium">
+                "{testimonials[index].text}"
               </p>
 
               {/* Decorative bottom accent */}
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-            </div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 to-orange-500"></div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Dots navigation */}
+        <div className="flex justify-center mt-6 space-x-3">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setIndex(i)}
+              className={`w-3 h-3 rounded-full transition-all ${
+                i === index ? "bg-yellow-400 scale-125" : "bg-gray-500"
+              }`}
+            />
           ))}
         </div>
 
