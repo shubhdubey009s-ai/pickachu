@@ -21,9 +21,7 @@ const Champions = () => {
       src: "https://i.imgur.com/CIQsSm8.jpeg",
       alt: "Champion transformation 2",
       review: {
-        text: "The guidance and nutrition plan helped me transform not just my body but my lifestyle.",
-        name: "Priya Mehta",
-        role: "Entrepreneur",
+        text: "TRISHA",
       },
     },
     {
