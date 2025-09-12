@@ -30,9 +30,7 @@ const Champions = () => {
       src: "https://i.imgur.com/bfyagHf.jpeg",
       alt: "Champion transformation 3",
       review: {
-        text: "I never thought I could achieve this physique. The process was tough but so worth it.",
-        name: "Aman Verma",
-        role: "Fitness Enthusiast",
+        text: "TRISHA"
       },
     },
     {
