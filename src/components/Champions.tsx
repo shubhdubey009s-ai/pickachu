@@ -10,7 +10,7 @@ const Champions = () => {
       src: "https://i.imgur.com/eSwFfDl.jpeg",
       alt: "Champion transformation 1",
       review: {
-        text: Coach "Aditya transformed the way I train for badminton. My agility, stamina, and strength on the court have improved drastically!",
+        text: "Coach Aditya transformed the way I train for badminton. My agility, stamina, and strength on the court have improved drastically!",
         name: "Trisha Darveshi",
         role: "Athlete",
       },
