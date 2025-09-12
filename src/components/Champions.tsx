@@ -22,7 +22,7 @@ const Champions = () => {
       alt: "Champion transformation 2",
       review: {
         text: "The guidance and nutrition plan helped me transform not just my body but my lifestyle.",
-        name: "Priya Mehta",
+        name: "Trisha Darveshi",
         role: "Entrepreneur",
       },
     },
@@ -33,7 +33,7 @@ const Champions = () => {
       alt: "Champion transformation 3",
       review: {
         text: "I never thought I could achieve this physique. The process was tough but so worth it.",
-        name: "Aman Verma",
+        name: "Trisha Darveshi",
         role: "Fitness Enthusiast",
       },
     },
