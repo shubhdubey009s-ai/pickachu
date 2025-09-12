@@ -5,7 +5,7 @@ const BackgroundShapes = () => {
     <div className="fixed inset-0 z-0 overflow-hidden bg-gradient-to-br from-black via-zinc-900 to-yellow-900">
       {/* Floating golden spotlight */}
       <div className="absolute inset-0">
-        <div className="absolute w-[160%] h-[160%] bg-[radial-gradient(circle,rgba(255,215,0,0.18),transparent_70%)] animate-float-slow"></div>
+        <div className="absolute w-[160%] h-[160%] bg-[radial-gradient(circle,rgba(255,215,0,0.18),transparent_70%)] animate-float-slow"></div> 
       </div>
 
       {/* Floating gradient shimmer */}
