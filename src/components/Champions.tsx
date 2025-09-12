@@ -61,6 +61,28 @@ const Champions = () => {
         role: "Student",
       },
     },
+    {
+      id: 6,
+      type: "image",
+      src: "https://i.imgur.com/N6N2HUF.jpeg",
+      alt: "Mahika Subramanian - Squash Athlete",
+      review: {
+        text: "I still remember the 1st day Mahika came to train under you for fitness. She and I both were sceptical. She was apprehensive and worried as to what would be expected from her. At the end of the session, she had a big smile on her face. She told me that she enjoyed this session thoroughly and I never had to coax her to go for fitness. She would be eager to join that session and such was the impact you and your techniques had on her.",
+        name: "Mahika Subramanian",
+        role: "Under-13 Squash Champion",
+        achievements: [
+          "47th Maharashtra State Open: 9th Position/32 girls in Under-13 category",
+          "Matunga Gymkhana Open: 8th Position in Under-13 category", 
+          "Dunlop Maharashtra State Closed Open: 3rd position",
+          "SFA Games: 3rd overall and reached finals of Matunga Club Open"
+        ],
+        improvements: [
+          "Agility - improved reaction time to respond",
+          "Speed - ability to reach the ball faster",
+          "Mental Strength - eagerness to match skill to fitness"
+        ]
+      },
+    },
   ];
 
   return (
@@ -117,8 +139,32 @@ const Champions = () => {
               {/* Review */}
               <div className="flex-1 text-white">
                 <p className="text-lg md:text-xl italic mb-4 text-gray-300">
-                  “{champion.review.text}”
+                  "{champion.review.text}"
                 </p>
+                
+                {/* Special content for Mahika */}
+                {champion.review.improvements && (
+                  <div className="mb-4">
+                    <h4 className="text-yellow-400 font-semibold mb-2">Key Improvements:</h4>
+                    <ul className="text-gray-300 text-sm space-y-1">
+                      {champion.review.improvements.map((improvement, idx) => (
+                        <li key={idx}>• {improvement}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {champion.review.achievements && (
+                  <div className="mb-4">
+                    <h4 className="text-yellow-400 font-semibold mb-2">Tournament Achievements (Since July 2024):</h4>
+                    <ul className="text-gray-300 text-sm space-y-1">
+                      {champion.review.achievements.map((achievement, idx) => (
+                        <li key={idx}>• {achievement}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 <div className="flex items-center gap-2">
                   <Star className="w-5 h-5 text-yellow-400" />
                   <span className="font-semibold">{champion.review.name}</span>

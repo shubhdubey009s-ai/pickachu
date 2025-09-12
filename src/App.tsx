@@ -5,7 +5,6 @@ import Programs from './components/Programs';
 import Courses from './components/Courses';
 import Testimonials from './components/Testimonials';
 import AthletePage from './components/AthletePage';
-import SquashAthlete from './components/SquashAthlete';
 import Champions from './components/Champions';
 import Footer from './components/Footer';
 import BackgroundShapes from './components/BackgroundShapes';
@@ -19,7 +18,6 @@ function App() {
         <Hero />
         <Programs />
         <AthletePage />
-        <SquashAthlete />
         <Champions />
         <Courses />
         <Testimonials />
