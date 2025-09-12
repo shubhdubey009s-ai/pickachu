@@ -21,7 +21,9 @@ const Champions = () => {
       src: "https://i.imgur.com/CIQsSm8.jpeg",
       alt: "Champion transformation 2",
       review: {
-        text: "TRISHA",
+        text: "The guidance and nutrition plan helped me transform not just my body but my lifestyle.",
+        name: "Priya Mehta",
+        role: "Entrepreneur",
       },
     },
     {
@@ -30,7 +32,9 @@ const Champions = () => {
       src: "https://i.imgur.com/bfyagHf.jpeg",
       alt: "Champion transformation 3",
       review: {
-        text: "TRISHA"
+        text: "I never thought I could achieve this physique. The process was tough but so worth it.",
+        name: "Aman Verma",
+        role: "Fitness Enthusiast",
       },
     },
     {
