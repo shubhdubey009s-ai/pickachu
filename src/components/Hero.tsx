@@ -63,8 +63,8 @@ const Hero = () => {
             whileHover={{ scale: 1.05, filter: 'drop-shadow(0 0 50px rgba(212, 175, 55, 0.4))' }}
           >
             <motion.img
-              src="https://i.imgur.com/ykQ95bW.jpeg"
-              alt="Champions Lifestyle New Logo"
+              src="/logo.png" // <-- Transparent PNG inside public folder
+              alt="Champions Lifestyle Transparent Logo"
               className="w-full h-full object-contain drop-shadow-2xl"
               onLoad={() => setLogoLoaded(true)}
               loading="eager"
