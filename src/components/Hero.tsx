@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 
 const Hero = () => {
-  const containerRef = useRef<HTMLDivElement>(null); 
+  const containerRef = useRef<HTMLDivElement>(null);
   const [logoLoaded, setLogoLoaded] = useState(false);
 
   const { scrollYProgress } = useScroll({
@@ -52,7 +52,10 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
 
       {/* Logo centerpiece */}
-      <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none" style={{ top: '-10%' }}>
+      <div
+        className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none"
+        style={{ top: '-10%' }}
+      >
         <motion.div
           initial={{ opacity: 0, scale: 0.5, rotateY: -180 }}
           animate={{ opacity: 1, scale: 1, rotateY: 0, rotateZ: 360 }}
@@ -60,12 +63,12 @@ const Hero = () => {
         >
           <motion.div
             className="relative w-[28rem] h-[28rem] sm:w-[32rem] sm:h-[32rem] lg:w-[36rem] lg:h-[36rem] flex items-center justify-center"
-            whileHover={{ scale: 1.05, filter: 'drop-shadow(0 0 50px rgba(212, 175, 55, 0.4))' }}
+            whileHover={{ scale: 1.05 }}
           >
             <motion.img
-              src="https://i.imgur.com/ykQ95bW.jpeg"
-              alt="Champions Lifestyle New Logo"
-              className="w-full h-full object-contain drop-shadow-2xl"
+              src="/logo.png" // put your transparent/clean logo here in /public folder
+              alt="Champions Lifestyle Logo"
+              className="w-full h-full object-contain"
               onLoad={() => setLogoLoaded(true)}
               loading="eager"
               decoding="async"
@@ -73,20 +76,9 @@ const Hero = () => {
               animate={{
                 opacity: logoLoaded ? 1 : 0,
                 scale: logoLoaded ? 1 : 1.2,
-                filter: logoLoaded
-                  ? 'blur(0px) drop-shadow(0 0 80px rgba(212, 175, 55, 0.5))'
-                  : 'blur(10px)'
+                filter: logoLoaded ? 'blur(0px)' : 'blur(10px)'
               }}
               transition={{ duration: 1.5, delay: 1 }}
-            />
-            <motion.div
-              className="absolute inset-0 pointer-events-none"
-              animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.02, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-              style={{
-                background: 'radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%)',
-                filter: 'blur(20px)'
-              }}
             />
           </motion.div>
         </motion.div>
@@ -112,7 +104,7 @@ const Hero = () => {
               backgroundPosition: { duration: 3, ease: 'easeInOut', repeat: Infinity }
             }}
           >
-             
+            {/* Your heading text */}
           </motion.h1>
 
           <motion.p
@@ -121,7 +113,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 2 }}
           >
-            
+            {/* Your subtitle/description */}
           </motion.p>
 
           {/* CTA buttons */}
