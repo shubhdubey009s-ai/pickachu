@@ -42,7 +42,7 @@ const Hero = () => {
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://i.imgur.com/ykQ95bW.jpeg"
+          src="https://i.imgur.com/JNHqgCV.png"
           alt="Cinematic Background"
           className="w-full h-full object-cover"
           loading="eager"
@@ -63,8 +63,8 @@ const Hero = () => {
             whileHover={{ scale: 1.05, filter: 'drop-shadow(0 0 50px rgba(212, 175, 55, 0.4))' }}
           >
             <motion.img
-              src="https://i.imgur.com/RXWtz5S.png"
-              alt="Champions Lifestyle Logo"
+              src="https://i.imgur.com/ykQ95bW.jpeg"
+              alt="Champions Lifestyle New Logo"
               className="w-full h-full object-contain drop-shadow-2xl"
               onLoad={() => setLogoLoaded(true)}
               loading="eager"
