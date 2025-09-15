@@ -66,8 +66,8 @@ const Hero = () => {
             whileHover={{ scale: 1.05 }}
           >
             <motion.img
-              src="https://i.imgur.com/ykQ95bW.jpeg"
-              alt="Champions Lifestyle New Logo"
+              src="https://i.imgur.com/Sv4PLr9.png" // <-- replace with your uploaded logo URL
+              alt="Champions Lifestyle Black Logo"
               className="w-full h-full object-contain"
               onLoad={() => setLogoLoaded(true)}
               loading="eager"
@@ -104,7 +104,7 @@ const Hero = () => {
               backgroundPosition: { duration: 3, ease: 'easeInOut', repeat: Infinity }
             }}
           >
-            {/* Heading text */}
+            {/* Add your headline here */}
           </motion.h1>
 
           <motion.p
@@ -113,7 +113,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 2 }}
           >
-            {/* Subtitle */}
+            {/* Add your tagline/description here */}
           </motion.p>
 
           {/* CTA buttons */}
