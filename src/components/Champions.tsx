@@ -53,7 +53,7 @@ const Champions = () => {
       id: 5,
       type: "video",
       embedCode:
-        '<div style="padding:176.67% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1116145794?badge=0&autopause=0&autoplay=1&loop=1&muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Champion transformation video 2"></iframe></div>',
+        '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://www.youtube.com/embed/DopOExnr3dU?autoplay=1&loop=1&mute=1&playlist=DopOExnr3dU" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Champion transformation video 2"></iframe></div>',
       alt: "Champion transformation video 2",
       review: {
         text: "Consistency and the right mentorship brought me here. Forever grateful to the team!",
