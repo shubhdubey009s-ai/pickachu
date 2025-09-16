@@ -62,7 +62,7 @@ const Hero = () => {
           transition={{ duration: 3.5, delay: 0.5 }}
         >
           <motion.div
-            className="relative w-[28rem] h-[28rem] sm:w-[32rem] sm:h-[32rem] lg:w-[36rem] lg:h-[36rem] flex items-center justify-center"
+            className="relative w-[20rem] h-[20rem] sm:w-[24rem] sm:h-[24rem] lg:w-[28rem] lg:h-[28rem] flex items-center justify-center"
             whileHover={{ scale: 1.05 }}
           >
             <motion.img
