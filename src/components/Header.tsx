@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Dumbbell } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,12 +15,11 @@ const Header = () => {
         >
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center shadow-lg shadow-yellow-500/40">
-              <Dumbbell className="w-6 h-6 text-black" />
-            </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
-              FitGold
-            </span>
+            <img
+              src="/AS Logo-07.jpg" // <- make sure this path matches where your file is in /public
+              alt="AS Logo"
+              className="w-12 h-12 object-contain rounded-full border border-yellow-500/40 shadow-md shadow-yellow-500/30"
+            />
           </div>
 
           {/* Desktop Nav */}
