@@ -41,7 +41,7 @@ const Champions = () => {
       id: 4,
       type: "video",
       embedCode:
-        '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://www.youtube.com/embed/bJMc3qT9hV4?autoplay=1&loop=1&mute=1&playlist=bJMc3qT9hV4" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Champion transformation video 1"></iframe></div>',
+        '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://www.youtube.com/embed/kRbWKeZf7DU?autoplay=1&loop=1&mute=1&playlist=kRbWKeZf7DU" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Champion transformation video 1"></iframe></div>',
       alt: "Champion transformation video 1",
       review: {
         text: "The video shows only part of the journey. The real win is how confident I feel today.",
