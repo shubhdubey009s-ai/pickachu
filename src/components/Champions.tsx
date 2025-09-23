@@ -10,9 +10,9 @@ const Champions = () => {
       src: "https://i.imgur.com/eSwFfDl.jpeg",
       alt: "Champion transformation 1",
       review: {
-        text: "Coach Aditya transformed the way I train for badminton. My agility, stamina, and strength on the court have improved drastically!",
-        name: "Trisha Darveshi",
-        role: "Athlete",
+        text: "Coach Aditya transformed the way I train for racing. My control, reflexes, and my performance at this sport have improved drastically!",
+        name: "gunjan tiwari",
+        role: "formula car driver",
       },
     },
     {
@@ -21,9 +21,9 @@ const Champions = () => {
       src: "https://i.imgur.com/CIQsSm8.jpeg",
       alt: "Champion transformation 2",
       review: {
-        text: "The guidance and nutrition plan helped me transform not just my body but my lifestyle.",
+        text: "Coach Aditya’s training completely elevated my stamina and agility on the badminton court — I feel faster, sharper, and more confident in every match.",
         name: "Trisha Darveshi",
-        role: "Entrepreneur",
+        role: "badminton player",
       },
     },
     {
@@ -45,8 +45,8 @@ const Champions = () => {
       alt: "Champion transformation video 1",
       review: {
         text: "The video shows only part of the journey. The real win is how confident I feel today.",
-        name: "Sneha Kapoor",
-        role: "Dancer",
+        name: "Trisha Darveshi",
+        role: "Badminton player",
       },
     },
     {
@@ -58,7 +58,7 @@ const Champions = () => {
       review: {
         text: "Consistency and the right mentorship brought me here. Forever grateful to the team!",
         name: "Karan Singh",
-        role: "Student",
+        role: "Weightlifter",
       },
     },
     {

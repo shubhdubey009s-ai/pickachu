@@ -18,48 +18,45 @@ const Programs = () => {
   const rotate = useTransform(smooth, [0, 1], [0, 360]);
   const scale = useTransform(smooth, [0, 1], [0.9, 1.1]);
 
+  // ✅ Updated Programs Content
   const programs = [
     {
       icon: Target,
-      title: "Weight Loss Program",
+      title: "Expert Guidance",
       features: [
-        "Custom meal plans",
-        "Cardio workouts",
-        "Progress tracking",
-        "24/7 support",
+        "Certified trainers with years of hands-on experience",
+        "Strategies rooted in science, not fads",
+        "Clear step-by-step coaching for faster progress",
       ],
       color: "from-yellow-400/20 via-yellow-500/10 to-amber-500/10",
     },
     {
       icon: Zap,
-      title: "Strength Training",
+      title: "Tailored Approach",
       features: [
-        "Progressive overload",
-        "Form correction",
-        "Muscle building",
-        "Recovery plans",
+        "Programs designed around your body type and lifestyle",
+        "Nutrition customized to your tastes and culture",
+        "Flexible routines that fit busy schedules",
       ],
       color: "from-orange-400/20 via-orange-500/10 to-red-500/10",
     },
     {
       icon: Heart,
-      title: "Wellness & Nutrition",
+      title: "All-in-One Support",
       features: [
-        "Lifestyle coaching",
-        "Stress management",
-        "Habit formation",
-        "Mindful eating",
+        "Training, nutrition, and mindset coaching in one place",
+        "24/7 accountability and progress tracking",
+        "Tools and resources to stay consistent long-term",
       ],
       color: "from-yellow-300/20 via-yellow-400/10 to-yellow-500/10",
     },
     {
       icon: Trophy,
-      title: "Competition Prep",
+      title: "Proven Results",
       features: [
-        "Contest prep",
-        "Peak week planning",
-        "Posing practice",
-        "Stage ready",
+        "Hundreds of real transformations across all fitness levels",
+        "Trackable milestones to see progress every week",
+        "A system built to deliver lasting, sustainable results",
       ],
       color: "from-yellow-500/20 via-amber-500/10 to-orange-400/10",
     },
@@ -109,16 +106,12 @@ const Programs = () => {
           >
             <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
               <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                Our Programs
+                What Makes Us Different
               </span>
             </h2>
-            <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
-              Choose from expertly crafted programs designed to help you achieve
-              your goals with precision, accountability, and world-class support.
-            </p>
           </motion.div>
 
-          {/* Program cards with cinematic effects */}
+          {/* Program cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {programs.map((program, i) => (
               <motion.div
