@@ -123,15 +123,20 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 3 }}
           >
+            {/* Begin Transformation button */}
             <motion.button
-              className="group relative bg-[#C8A766] text-black px-8 py-4 rounded-xl font-bold text-lg overflow-hidden"
+              className="group relative bg-[#FAC015] text-black px-8 py-4 rounded-xl font-bold text-lg overflow-hidden"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               style={{
-                boxShadow: '0 0 50px rgba(212, 175, 55, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                boxShadow:
+                  '0 0 50px rgba(250, 192, 21, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
               }}
               onClick={() =>
-                window.open('https://calendly.com/championlifestyle-yash/30min?month=2025-07', '_blank')
+                window.open(
+                  'https://calendly.com/championlifestyle-yash/30min?month=2025-07',
+                  '_blank'
+                )
               }
             >
               <motion.div
@@ -145,6 +150,7 @@ const Hero = () => {
               </span>
             </motion.button>
 
+            {/* Watch Transformations button */}
             <motion.button
               className="group flex items-center space-x-3 text-white/90 hover:text-white"
               whileHover={{ scale: 1.05 }}
